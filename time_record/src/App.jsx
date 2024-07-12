@@ -73,7 +73,7 @@ export const App = () => {
       ) : (
         <>
           <h1 data-testid="title">学習記録一覧</h1>
-          <h2>この下に学習内容を入力しましょう。</h2>
+          <h2>この下に学習内容を入力してください。</h2>
           <p>今日は何を勉強しましたか？</p>
           <div className="list-row">
             <p>学習内容</p>
