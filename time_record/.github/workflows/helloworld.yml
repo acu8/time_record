@@ -1,7 +1,6 @@
 name: Hello
 
-on:
-  workflow_dispatch:
+on:push
 
 jobs:
   say_hello:
