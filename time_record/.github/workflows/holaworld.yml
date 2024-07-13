@@ -1,12 +1,10 @@
-name: "Hello World"
+name: Hello World
 
-# 動くきっかけ
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
-# 動かす内容
 jobs:
-  sample:
-    name: Hello World Job
-    runs-on: ubuntu-latest # 実行環境
-    steps: # 実行する内容
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
       - run: echo "Hello World!"
