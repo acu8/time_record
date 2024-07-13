@@ -1,7 +1,9 @@
 name: "Hello World"
 
 # 動くきっかけ
-on: [push]
+on:
+  push:
+    branches:
 
 # 動かす内容
 jobs:
