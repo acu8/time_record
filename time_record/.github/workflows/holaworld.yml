@@ -1,9 +1,7 @@
 name: "Hello World"
 
 # 動くきっかけ
-on:
-  push:
-    branches:
+on: workflow_dispatch
 
 # 動かす内容
 jobs:
