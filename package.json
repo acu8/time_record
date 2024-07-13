@@ -10,12 +10,19 @@
     "preview": "vite preview",
     "test": "jest"
   },
+  "jest": {
+    "setupFiles": [
+      "dotenv/config"
+    ],
+    "testEnvironment": "jsdom"
+  },
   "dependencies": {
     "@supabase/supabase-js": "^2.44.3",
     "dotenv": "^16.4.5",
     "firebase": "^10.12.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "vite-plugin-env-compatible": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.8",
