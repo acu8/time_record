@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { addContent, deleteContent, getAll } from "./utils/supabaseFunctions";
 import { Loading } from "./Loading";
+import "./App.css";
 
 export const App = () => {
   const [content, setContent] = useState("");
