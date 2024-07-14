@@ -111,6 +111,7 @@ test("削除ボタンを押すと学習記録が削除される", async () => {
   );
 
   const updatedRecords = await screen.findAllByTestId("record");
+  console.log(initialRecords.length);
   console.log(updatedRecords.length);
   expect(updatedRecords.length).toBe(initialRecords.length - 1);
 });
