@@ -47,7 +47,7 @@ test("入力をしないで登録を押すとエラーが表示される", async
 test("フォームに学習内容と時間を入力して登録ボタンを押すと新たに記録が追加される", async () => {
   render(<App />);
 
-  await waitFor(() => screen.getByTestId("study-content-input"), {
+  await waitFor(async () => await screen.getByTestId("study-content-input"), {
     timeout: 500,
   });
 
@@ -110,5 +110,6 @@ test("削除ボタンを押すと学習記録が削除される", async () => {
   );
 
   const updatedRecords = await screen.findAllByTestId("record");
+  console.log(updatedRecords.length);
   expect(updatedRecords.length).toBe(initialRecords.length - 1);
 });
