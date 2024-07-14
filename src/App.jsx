@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { addContent, deleteContent, getAll } from "./utils/supabaseFunctions";
 import { Loading } from "./Loading";
@@ -17,23 +18,18 @@ export const App = () => {
   const onChangeTime = (event) => setTime(event.target.value);
 
   const onRegister = async () => {
-    // 空白の場合は何もしない
     if (!content || !time) {
       setError(true);
       return;
     }
     setError(false);
 
-    // setSRecords((prev) => [
-    //   ...prev,
-    //   { title: content, time: parseFloat(time) },
-    // ]);
     try {
-      //supabaseへデータを入れる
       await addContent(content, time);
-      //supabaseからデータをフェッチ
       const suparecords = await getAll();
+
       setSRecords(suparecords);
+
       setContent("");
       setTime("");
     } catch (error) {
@@ -77,11 +73,21 @@ export const App = () => {
           <p>今日は何をどれくらいを勉強しましたか？</p>
           <div className="list-row">
             <p>学習内容</p>
-            <input value={content} onChange={onChangeContent} type="text" />
+            <input
+              value={content}
+              onChange={onChangeContent}
+              type="text"
+              data-testid="study-content-input"
+            />
           </div>
           <div className="list-row">
             <p>学習時間</p>
-            <input value={time} onChange={onChangeTime} type="text" />
+            <input
+              value={time}
+              onChange={onChangeTime}
+              type="text"
+              data-testid="study-time-input"
+            />
             <p>時間</p>
           </div>
           <div>
@@ -101,10 +107,13 @@ export const App = () => {
             <div>
               <ul>
                 {srecords.map((srecord, id) => (
-                  <li key={id}>
+                  <li key={id} data-testid="record">
                     <p>
                       {srecord.content} {srecord.time}時間
-                      <button onClick={() => handleDelete(srecord.id)}>
+                      <button
+                        onClick={() => handleDelete(srecord.id)}
+                        data-testid="delete"
+                      >
                         削除
                       </button>
                     </p>
@@ -112,7 +121,9 @@ export const App = () => {
                 ))}
               </ul>
             </div>
-            <button onClick={onRegister}>登録</button>
+            <button onClick={onRegister} data-testid="submit">
+              登録
+            </button>
           </div>
           <div>
             {error ? (

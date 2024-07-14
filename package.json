@@ -10,12 +10,6 @@
     "preview": "vite preview",
     "test": "jest"
   },
-  "jest": {
-    "setupFiles": [
-      "dotenv/config"
-    ],
-    "testEnvironment": "jsdom"
-  },
   "dependencies": {
     "@supabase/supabase-js": "^2.44.3",
     "dotenv": "^16.4.5",

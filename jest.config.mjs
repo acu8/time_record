@@ -4,7 +4,7 @@ export default {
     "^.+\\.(js|jsx)$": "babel-jest",
   },
   moduleNameMapper: {
-    "\\.(css|less)$": "identity-obj-proxy",
+    "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
   },
   setupFilesAfterEnv: ["./jest.setup.js"],
   transformIgnorePatterns: [
