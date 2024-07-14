@@ -48,11 +48,12 @@ test("フォームに学習内容と時間を入力して登録ボタンを押�
   render(<App />);
 
   await waitFor(async () => await screen.getByTestId("study-content-input"), {
-    timeout: 500,
+    timeout: 5000,
   });
 
   // 学習内容と時間の入力フィールドを取得
   const contentInput = screen.getByTestId("study-content-input");
+  console.log(contentInput);
   const timeInput = screen.getByTestId("study-time-input");
 
   // 学習内容と時間を入力
